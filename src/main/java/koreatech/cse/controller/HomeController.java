@@ -31,12 +31,6 @@ public class HomeController {
         return "home";
     }
 
-    @RequestMapping(value = "/noticeList")
-    public String noticeList(Model model){
-        List<Notice> noticeList = noticeService.getNoticeList();
-        model.addAttribute("noticeList",noticeList);
 
-        return "/notice/noticelist";
-    }
 
 }

@@ -22,15 +22,15 @@
 <%--you cannot put a container inside another container--%>
 <div class="container">
     <sec:authorize access="isAuthenticated()">
-
-
+    <br/>
     <div class="row">
         <div class="col-sm-10"></div>
         <div class="col-sm-2">로그아웃/ alarm 부분</div>
     </div>
+        <br/><br/><br/><br/>
     <div class="row" style="text-align:center">
         <%--공지사항버튼--%>
-            <a href="/noticeList" class="btn btn-primary" role="button"> 공지사항 보기</a>
+            <a href="/notice/noticeList" class="btn btn-primary" role="button"> 공지사항 보기</a>
 
     </div>
     <br/><br/><br/>

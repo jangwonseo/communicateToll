@@ -15,10 +15,10 @@ import java.util.List;
 @Repository
 public interface NoticeMapper {
 
-    @Insert("INSERT INTO notice_list (title, content, date, writer_user_id) VALUES (#{title}, #{content}, #{date}, #{writer_user_id})")
+    @Insert("INSERT INTO notice_list (title, content, date, writer_user_name) VALUES (#{title}, #{content}, #{date}, #{writerUserName})")
     void insert(Notice notice);
 
-    @Update("UPDATE notice_list SET title = #{title}, content = #{content}, date = #{date}, writer_user_id = #{writer_user_id} WHERE ID = #{id}")
+    @Update("UPDATE notice_list SET title = #{title}, content = #{content}, date = #{date}, writer_user_name = #{writerUserName} WHERE ID = #{id}")
     void update(Notice notice);
 
     @Select("SELECT * FROM notice_list WHERE id = #{id}")

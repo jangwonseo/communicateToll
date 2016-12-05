@@ -18,5 +18,8 @@ public class NoticeService {
        return list;
    }
 
+   public void setNotice(Notice notice){
+       noticeMapper.insert(notice);
+   }
 
 }

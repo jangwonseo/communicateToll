@@ -33,11 +33,13 @@ public class UserController {
     @RequestMapping(value="/signup", method= RequestMethod.POST)
     public String signup(@ModelAttribute User user) {
         if(userService.isEmailExist(user.getEmail())){
-            //sign up fail
+            System.out.println("sign up fail");
             return "redirect:/user/signupFail";
         }else{
-            //sign up success
-            return "redirect:/home";
+            System.out.println("sign up success");
+            userService.signup(user);
+            return "redirect:/";
+            //이렇게 하니까 인증을 못받는듯 한번 거치는게 필요한듯
         }
     }
     @RequestMapping(value = "/signupFail")

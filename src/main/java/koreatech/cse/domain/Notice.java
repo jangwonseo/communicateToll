@@ -8,7 +8,7 @@ public class Notice {
     String title;
     String content;
     String date;
-    int writerUserId;
+    String writerUserName;
 
 
     public int getId() {
@@ -43,12 +43,12 @@ public class Notice {
         this.date = date;
     }
 
-    public int getWriterUserId() {
-        return writerUserId;
+    public String getWriterUserId() {
+        return writerUserName;
     }
 
-    public void setWriterUserId(int writerUserId) {
-        this.writerUserId = writerUserId;
+    public void setWriterUserId(String writerUserName) {
+        this.writerUserName = writerUserName;
     }
 
 

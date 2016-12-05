@@ -46,7 +46,20 @@
 
                 </tbody>
             </table>
+        </div> <%-- table-responsive--%>
+
+        <div class="row" style="text-align:center">
+
+            <a href="/notice/uploadNotice" class="btn btn-primary" role="button"> 공지사항 올리기</a>
         </div>
+        <br/>
+        <div class="row" style="text-align:center">
+
+            <a href="/home" class="btn btn-primary" role="button"> 홈으로</a>
+        </div>
+
+
+
 
 
     </sec:authorize>
