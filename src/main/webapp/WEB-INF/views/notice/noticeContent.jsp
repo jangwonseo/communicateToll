@@ -22,22 +22,33 @@
 <%--you cannot put a container inside another container--%>
 <div class="container">
     <sec:authorize access="isAuthenticated()">
+        <h1>공지사항입니다.</h1>
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>글번호</th>
+                    <th>제목</th>
+                    <th>날짜</th>
+                    <th>글쓴이</th>
+                </tr>
+                </thead>
+                <tbody>
+                <c:forEach var="noticeList" items="${noticeList}">
+                    <tr>
+                        <td>${noticeList.id}</td>
+                        <td>${noticeList.title}</td>
+                        <td>${noticeList.date}</td>
+                        <td>${noticeList.writerUserId}</td>
+                    </tr>
+
+                </c:forEach>
+
+                </tbody>
+            </table>
+        </div>
 
 
-    <div class="row">
-        <div class="col-sm-10"></div>
-        <div class="col-sm-2">로그아웃/ alarm 부분</div>
-    </div>
-    <div class="row" style="text-align:center">
-        <%--공지사항버튼--%>
-            <a href="/noticeList" class="btn btn-primary" role="button"> 공지사항 보기</a>
-
-    </div>
-    <br/><br/><br/>
-    <div class="row" style="text-align:center">
-        <%--쪽지 보내기 버튼--%>
-            <a href="#" class="btn btn-primary" role="button"> 쪽지보내기</a>
-    </div>
     </sec:authorize>
 </div>
 

@@ -26,7 +26,7 @@ public class UserController {
     public String signup(Model model) {
         User user = new User();
         model.addAttribute("user", user);
-        return "signup";
+        return "sign/signup";
     }
 
     @Transactional
@@ -53,7 +53,7 @@ public class UserController {
         searchable.setOrderParam(order);
         //model.addAttribute("users", userMapper.findByProvider(searchable));
         model.addAttribute("users", userMapper.findByScript(searchable));
-        return "list";
+        return "sign/list";
     }
 
     @RequestMapping(value = "/edit", method = RequestMethod.GET)
@@ -80,7 +80,7 @@ public class UserController {
 
     @RequestMapping("/signin")
     public String signin() {
-        return "signin";
+        return "sign/signin";
     }
 
     @RequestMapping(value="/signinSuccess")
