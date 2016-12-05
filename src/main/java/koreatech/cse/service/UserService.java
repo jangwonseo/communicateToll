@@ -1,5 +1,6 @@
 package koreatech.cse.service;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import koreatech.cse.domain.Authority;
 import koreatech.cse.domain.User;
 import koreatech.cse.repository.AuthorityMapper;
@@ -23,6 +24,14 @@ public class UserService implements UserDetailsService {
     @Inject
     private PasswordEncoder passwordEncoder;
 
+    public boolean isEmailExist(String email){
+        User stored = userMapper.findByEmail(email);
+        if(stored != null){
+            return true;
+        }else{
+            return false;
+        }
+    }
 
     public Boolean signup(User user) {
         if(user.getEmail() == null || user.getPassword() ==  null)
@@ -57,5 +66,6 @@ public class UserService implements UserDetailsService {
         System.out.println("user = " + user);
         return user;
     }
+
 
 }

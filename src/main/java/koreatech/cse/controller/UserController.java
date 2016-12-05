@@ -32,8 +32,17 @@ public class UserController {
     @Transactional
     @RequestMapping(value="/signup", method= RequestMethod.POST)
     public String signup(@ModelAttribute User user) {
-        userService.signup(user);
-        return "redirect:/user/list";
+        if(userService.isEmailExist(user.getEmail())){
+            //sign up fail
+            return "redirect:/user/signupFail";
+        }else{
+            //sign up success
+            return "redirect:/home";
+        }
+    }
+    @RequestMapping(value = "/signupFail")
+    public String signupFail(){
+        return "sign/signupFail";
     }
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
@@ -77,7 +86,7 @@ public class UserController {
     @RequestMapping(value="/signinSuccess")
     public String signinSuccess() {
         System.out.println("signin Success");
-        return "redirect:/";
+        return "redirect:/home";
     }
 
     @RequestMapping(value="/signinFailed")

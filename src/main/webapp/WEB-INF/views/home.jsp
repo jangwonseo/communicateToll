@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<c:set var="user" value="${SPRING_SECURITY_CONTEXT.authentication.principal}"/>
 <%--<%@include file="/WEB-INF/views/include/header/top.jsp"%>--%>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,13 +21,24 @@
 <body>
 <%--you cannot put a container inside another container--%>
 <div class="container">
+    <sec:authorize access="isAuthenticated()">
+
+
     <div class="row">
-        <div class="col-sm-4" style="background-color:lavender;">.col-sm-4</div>
-        <div class="col-sm-4" style="background-color:lavenderblush;">.col-sm-4</div>
-        <div class="col-sm-4" style="background-color:lavender;">.col-sm-4</div>
+        <div class="col-sm-10"></div>
+        <div class="col-sm-2">로그아웃/ alarm 부분</div>
     </div>
+    <div class="row" style="text-align:center">
+        <%--공지사항버튼--%>
+            <a href="#" class="btn btn-primary" role="button"> 공지사항 보기</a>
 
-
+    </div>
+    <br/><br/><br/>
+    <div class="row" style="text-align:center">
+        <%--쪽지 보내기 버튼--%>
+            <a href="#" class="btn btn-primary" role="button"> 쪽지보내기</a>
+    </div>
+    </sec:authorize>
 </div>
 
 

@@ -3,12 +3,12 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <html>
 <head>
-    <title>testing test.jsp</title>
+    <title>Spring 실습</title>
 </head>
 <body>
-<h1>tested.jsp</h1>
-<p>id : ${id}</p>
-<p>pw : ${pw}</p>
+이미 존재하는 계정입니다.
+
+<button type="button" onclick="location.href='/user/signup' ">뒤로가기</button>
 
 </body>
 </html>
