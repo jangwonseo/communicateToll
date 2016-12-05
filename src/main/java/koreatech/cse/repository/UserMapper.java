@@ -18,11 +18,17 @@ public interface UserMapper {
     @Update("UPDATE USERS SET NAME = #{name}, EMAIL = #{email}, PASSWORD = #{password}, AGE = #{age} WHERE ID = #{id}")
     void update(User user);
 
+    @Select("SELECT * FROM USERS")
+    List<User> findAll();
+
     @Select("SELECT * FROM USERS WHERE ID = #{id}")
     User findOne(@Param("id") int id);
 
     @Select("SELECT * FROM USERS WHERE EMAIL = #{email}")
     User findByEmail(@Param("email") String email);
+
+    @Select("SELECT * FROM USERS WHERE NAME = #{name}")
+    User findByName(@Param("name") String name);
 
     @Delete("DELETE FROM USERS WHERE ID = #{id}")
     void delete(@Param("id") int id);

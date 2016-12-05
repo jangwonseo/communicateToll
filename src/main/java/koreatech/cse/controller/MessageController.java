@@ -1,6 +1,7 @@
 package koreatech.cse.controller;
 
 import koreatech.cse.domain.Message;
+import koreatech.cse.domain.User;
 import koreatech.cse.service.MessageService;
 import koreatech.cse.service.UserService;
 import org.springframework.stereotype.Controller;
@@ -22,14 +23,18 @@ public class MessageController {
     @Inject
     UserService userService;
 
-    @RequestMapping(value = "/{userId}")
-    public String messageList(@PathVariable int userId, Model model){
-        List<Message> messageList = messageService.getReceivedAllMessage(userId);
+    @RequestMapping(value = "/")
+    public String messageList(Model model){
+        System.out.println("3333333");
+        User loginUser = User.current();
+        List<Message> messageList = messageService.getReceivedAllMessage(loginUser.getId());
         model.addAttribute("messageList",messageList);
-        return "message/messageList";
+        return "/message/messageList";
     }
     @RequestMapping(value = "/sendMessage")
-    public String sendMessage(){
+    public String sendMessage(Model model){
+        List<User> users = userService.findAllUsers();
+        model.addAttribute("users",users);
         return "message/sendMessage";
     }
 

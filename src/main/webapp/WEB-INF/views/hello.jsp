@@ -8,9 +8,9 @@
 <body>
 <%@ include file="headerBar.jsp" %>
 <img src="/resources/images/spring.png"/><br/>
-<sec:authorize access="isAuthenticated()">
-    <a href="/user/list">회원 리스트 보기</a>
-</sec:authorize>
+<%--<sec:authorize access="isAuthenticated()">--%>
+    <%--<a href="/user/list">회원 리스트 보기</a>--%>
+<%--</sec:authorize>--%>
 
 </body>
 </html>

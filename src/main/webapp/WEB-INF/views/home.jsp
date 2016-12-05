@@ -25,7 +25,8 @@
         <br/>
         <div class="row">
             <div class="col-sm-10"></div>
-            <div class="col-sm-2">로그아웃/ alarm 부분</div>
+            <%--<div class="col-sm-2">로그아웃/ alarm 부분</div>--%>
+            <div class="col-sm-2"></div>
         </div>
 
         <br/><br/><br/><br/>
@@ -37,11 +38,13 @@
         <br/><br/><br/>
 
         <div class="row" style="text-align:center">
-            <a href="/message/${user.id}" class="btn btn-primary" role="button"> 쪽지함</a>
+            <a href="/message/" class="btn btn-primary" role="button"> 쪽지함</a>
         </div>
         <br/><br/><br/>
 
     </sec:authorize>
+
+
 </div>
 
 

@@ -36,7 +36,14 @@
                     <tr>
                         <td>&nbsp;</td>
                         <td align="center">받는 사람</td>
-                        <td><input name="receive_id" size="50" maxlength="50"></td>
+                        <td>
+                            <%--<select>--%>
+                                <%--<c:forEach var="users" items="${users}">--%>
+                                    <%--<option name="receive_id" value="${users.id}">${users.id}</option>--%>
+                                <%--</c:forEach>--%>
+                            <%--</select>--%>
+                                <input name="receive_id" size="50" maxlength="100">
+                        </td>
                         <td>&nbsp;</td>
                     </tr>
                     <tr height="1" bgcolor="#82B5DF"><td colspan="4"></td></tr>
@@ -52,7 +59,7 @@
                     <tr align="center">
                         <td>&nbsp;</td>
                         <td colspan="2"><input class="btn btn-primary" type=submit value="등록">
-                            <a href="/message/${user.id}" class="btn btn-primary" role="button"> 취소</a>
+                            <a href="/message" class="btn btn-primary" role="button"> 취소</a>
                         <td>&nbsp;</td>
                     </tr>
                 </form>

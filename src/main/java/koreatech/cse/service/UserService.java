@@ -71,4 +71,9 @@ public class UserService implements UserDetailsService {
         return user;
     }
 
+    public List<User> findAllUsers(){
+        List<User> users = userMapper.findAll();
+        return users;
+    }
+
 }
