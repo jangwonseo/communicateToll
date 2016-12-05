@@ -22,11 +22,11 @@
 <%--you cannot put a container inside another container--%>
 <div class="container">
     <sec:authorize access="isAuthenticated()">
-        <h1>공지사항 등록</h1>
+        <h1>쪽지 보내기</h1>
         <div class="table-responsive">
             <table class="table table-hover">
-                <form action="/notice/uploadNotice", method="POST">
-                    <tr>
+                <form action="/message/sendMessage", method="POST">
+                    <tr>s
                         <td>&nbsp;</td>
                         <td align="center">보내는 사람</td>
                         <td><input name="send_id" size="50" maxlength="100" value="${user.id}" readonly></td>
