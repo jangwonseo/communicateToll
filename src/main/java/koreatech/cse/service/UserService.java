@@ -1,6 +1,5 @@
 package koreatech.cse.service;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import koreatech.cse.domain.Authority;
 import koreatech.cse.domain.User;
 import koreatech.cse.repository.AuthorityMapper;
@@ -24,17 +23,17 @@ public class UserService implements UserDetailsService {
     @Inject
     private PasswordEncoder passwordEncoder;
 
-    public boolean isEmailExist(String email){
+    public boolean isEmailExist(String email) {
         User stored = userMapper.findByEmail(email);
-        if(stored != null){
+        if (stored != null) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
 
     public Boolean signup(User user) {
-        if(user.getEmail() == null || user.getPassword() ==  null)
+        if (user.getEmail() == null || user.getPassword() == null)
             return false;
 
         user.setPassword(passwordEncoder.encode(user.getPassword()));
@@ -45,7 +44,7 @@ public class UserService implements UserDetailsService {
         authority.setRole("ROLE_USER");
         authorityMapper.insert(authority);
 
-        if(user.getEmail().contains("admin")) {
+        if (user.getEmail().contains("admin")) {
             Authority adminAuthority = new Authority();
             adminAuthority.setUserId(user.getId());
             adminAuthority.setRole("ROLE_ADMIN");
@@ -67,5 +66,9 @@ public class UserService implements UserDetailsService {
         return user;
     }
 
+    public User findUserById(int userId) {
+        User user = userMapper.findOne(userId);
+        return user;
+    }
 
 }

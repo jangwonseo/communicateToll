@@ -39,7 +39,6 @@ public class UserController {
             System.out.println("sign up success");
             userService.signup(user);
             return "redirect:/";
-            //이렇게 하니까 인증을 못받는듯 한번 거치는게 필요한듯
         }
     }
     @RequestMapping(value = "/signupFail")

@@ -22,24 +22,43 @@
 <%--you cannot put a container inside another container--%>
 <div class="container">
     <sec:authorize access="isAuthenticated()">
+        <h1>${user.name}님의 쪽지함입니다.</h1>
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>보낸이</th>
+                    <th>시간</th>
+                    <th>내용</th>
+                </tr>
+                </thead>
+                <tbody>
+                <c:forEach var="messageList" items="${messageList}">
+                    <tr>
+                        <td>${messageList.sendName}</td>
+                        <td>${messageList.sendTime}</td>
+                        <td>${messageList.content}</td>
+                    </tr>
+
+                </c:forEach>
+
+                </tbody>
+            </table>
+        </div> <%-- table-responsive--%>
+
+        <div class="row" style="text-align:center">
+
+            <a href="/message/sendMessage" class="btn btn-primary" role="button"> 쪽지 보내기</a>
+        </div>
         <br/>
-        <div class="row">
-            <div class="col-sm-10"></div>
-            <div class="col-sm-2">로그아웃/ alarm 부분</div>
-        </div>
-
-        <br/><br/><br/><br/>
-
         <div class="row" style="text-align:center">
-            <a href="/notice/noticeList" class="btn btn-primary" role="button"> 공지사항 보기</a>
+
+            <a href="/home" class="btn btn-primary" role="button"> 홈으로</a>
         </div>
 
-        <br/><br/><br/>
 
-        <div class="row" style="text-align:center">
-            <a href="/message/${user.id}" class="btn btn-primary" role="button"> 쪽지함</a>
-        </div>
-        <br/><br/><br/>
+
+
 
     </sec:authorize>
 </div>

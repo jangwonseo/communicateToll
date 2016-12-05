@@ -1,14 +1,11 @@
 package koreatech.cse.controller;
 
-import koreatech.cse.domain.Notice;
 import koreatech.cse.service.NoticeService;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.inject.Inject;
-import java.util.List;
 
 @Controller
 @RequestMapping("/")
@@ -28,7 +25,7 @@ public class HomeController {
 
     @RequestMapping(value = "/home")
     public String mainHome(){
-        return "home";
+        return "/home";
     }
 
 
