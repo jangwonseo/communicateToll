@@ -42,6 +42,7 @@ public class NoticeController {
         String currentMinStr = ""+currentDate.get(Calendar.MINUTE);
         String currentSecStr = ""+currentDate.get(Calendar.SECOND);
         String dateStr = currentYearStr+"년"+currentMonthStr+"월"+currentDateStr+"일 "+currentHourStr+":"+currentMinStr+":"+currentSecStr;
+
         Notice notice = new Notice();
         notice.setTitle(title);
         notice.setContent(content);
